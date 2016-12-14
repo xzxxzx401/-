@@ -84,8 +84,9 @@ template <typename T> class MyVector
 	int erase(int _lo,int _hi)
 	{
 		if(_lo==_hi) return 0;
+		int woshisb=_hi-_lo;
 		while(_hi<_size) _elem[_lo++]=_elem[_hi++];
-		_size=_lo;
+		_size-=woshisb;
 		shrink();
 		return _hi-_lo;
 	}
@@ -94,9 +95,9 @@ template <typename T> class MyVector
 	Rank insert(Rank _r,T const _temp)
 	{
 		expand();
-		for(int _i=_size;_i>r;_i--) _elem[_i]=_elem[_i-1];
-		_elem[r]=_temp;_size++;
-		return r;
+		for(int _i=_size;_i>_r;_i--) _elem[_i]=_elem[_i-1];
+		_elem[_r]=_temp;_size++;
+		return _r;
 	}
 	/*void sort()//ÅÅÐòº¯Êý£¬²»»áÐ´
 	{

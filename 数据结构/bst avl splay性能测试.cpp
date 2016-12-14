@@ -9,6 +9,7 @@
 #include"BST.h"
 #include"AVL.h"
 #include"Myvector.h"
+#include"BTree.h"
 #include"Splay.h"
 #define MAX_AMOUNT 1000000
 using namespace std;
@@ -139,16 +140,44 @@ int main()
 	//test1();
 	//test2();
 	////test3();
-	MyVector<int> vec;
-	vec.push_back(1);
-	vec.push_back(2);
-	vec.push_back(5);
-	cout<<vec.search(0)<<endl;
-	cout<<vec.search(1)<<endl;
-	cout<<vec.search(2)<<endl;
-	cout<<vec.search(3)<<endl;
-	cout<<vec.search(5)<<endl;
-	cout<<vec.search(12)<<endl;
+	BTree<int> bt(3);
+	
+	bt.insert(20);
+	bt.insert(30);
+	bt.insert(50);
+	bt.insert(52);
+	bt.insert(60);
+	bt.insert(68);
+	bt.insert(70);
+
+	cout<<(bt.search(20)!=nullptr);
+	cout<<(bt.search(30)!=nullptr);
+	cout<<(bt.search(50)!=nullptr);
+	cout<<(bt.search(52)!=nullptr);
+	cout<<(bt.search(60)!=nullptr);
+	cout<<(bt.search(68)!=nullptr);
+	cout<<(bt.search(70)!=nullptr);
+	cout<<endl;
+
+	bt.remove(50);
+	cout<<(bt.search(20)!=nullptr);
+	cout<<(bt.search(30)!=nullptr);
+	cout<<(bt.search(50)!=nullptr);
+	cout<<(bt.search(52)!=nullptr);
+	cout<<(bt.search(60)!=nullptr);
+	cout<<(bt.search(68)!=nullptr);
+	cout<<(bt.search(70)!=nullptr);
+	cout<<endl;
+
+	bt.remove(68);
+	cout<<(bt.search(20)!=nullptr);
+	cout<<(bt.search(30)!=nullptr);
+	cout<<(bt.search(50)!=nullptr);
+	cout<<(bt.search(52)!=nullptr);
+	cout<<(bt.search(60)!=nullptr);
+	cout<<(bt.search(68)!=nullptr);
+	cout<<(bt.search(70)!=nullptr);
+	cout<<endl;
 
 #ifdef _DEBUG
 	system("pause");
