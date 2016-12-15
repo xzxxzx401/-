@@ -77,5 +77,11 @@
     <ClCompile Include="bst avl splay性能测试.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="bf因子求avl高度.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

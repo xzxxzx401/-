@@ -1,6 +1,6 @@
 #ifndef BinaryTree
 #define BinaryTree
-
+#include<algorithm>
 #define BinNodePosi(T) BinNode<T>*
 #define get_hight(p) ((p) ? (p)->hight : -1)
 #define taller_child(p) (get_hight(p->lc)>get_hight(p->rc)?p->lc:p->rc)
@@ -85,8 +85,7 @@ template <typename T> class BinTree
 	}
 	void updateHightAbove(BinNodePosi(T) _x)
 	{
-		bool ok=1;
-		while(_x&&ok)
+		while(_x)
 		{
 			updateHight(_x);
 			_x=_x->parent;

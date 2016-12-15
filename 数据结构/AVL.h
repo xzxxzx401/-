@@ -10,11 +10,14 @@
 template <typename T> class AVL:protected BST<typename T>
 {
 	public:
+	BinNodePosi(T) root() { return _root; }
 	BinNodePosi(T)& search(const T& e) { return BST::search(e); }
 
 	BinNodePosi(T) insert(const T& e)
 	{
-		BinNodePosi(T) temp=BST::insert(e);
+		BinNodePosi(T) & x=search(e); if(x) return x; //确认目标节点不存在
+		BinNodePosi(T) xx=x=new BinNode<T>(e, _hot); _size++;
+		//注意以后可能旋转 故在此处不更新高度 也不能调用BST::insert
 		for(BinNodePosi(T) h=_hot;h;h=h->parent)//寻找失衡点并重新平衡
 		{
 			if(!AVL_Balenced(h))
@@ -24,9 +27,9 @@ template <typename T> class AVL:protected BST<typename T>
 				break;
 			}
 			else
-				updateHightAbove(h);
+				updateHight(h);
 		}
-		return temp;
+		return xx;
 	}
 
 	bool remove(const T& e)
@@ -40,7 +43,7 @@ template <typename T> class AVL:protected BST<typename T>
 				(is_root(h) ? _root : (h->parent->lc==h ? h->parent->lc : h->parent->rc))
 					=rotateAt(taller_child(taller_child(h)));
 			}
-			updateHightAbove(h);
+			updateHight(h);
 		}
 		return true;
 	}
@@ -62,7 +65,7 @@ template <typename T> class AVL:protected BST<typename T>
 				g->lc=p->rc;if(g->lc) g->lc->parent=g;
 				p->rc=g;g->parent=p;
 				p->parent=bb;
-				updateHight(p);updateHight(g);updateHight(v);
+				updateHight(g);updateHight(v);updateHight(p);
 				return p;
 			}
 			else//zag_p-zig_g
@@ -96,7 +99,7 @@ template <typename T> class AVL:protected BST<typename T>
 				g->rc=p->lc;if(g->rc) g->rc->parent=g;
 				p->lc=g;g->parent=p;
 				p->parent=bb;
-				updateHight(p);updateHight(g);updateHight(v);
+				updateHight(g);updateHight(v);updateHight(p);
 				return p;
 			}
 		}
