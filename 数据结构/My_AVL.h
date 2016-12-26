@@ -1,13 +1,13 @@
-#ifndef AVL_Tree
-#define AVL_Tree
+#ifndef MY_AVL
+#define MY_AVL
 
-#include"BST.h"
-#include"BinTree.h"
+#include"My_BST.h"
+#include"My_BinTree.h"
 #define AVL_BalFactor(x) get_hight(x->lc)-get_hight(x->rc)//平衡因子
 #define AVL_Balenced(x) ((-2<AVL_BalFactor(x)) && (AVL_BalFactor(x)<2))//平衡么？
 
 
-template <typename T> class AVL:protected BST<typename T>
+template <typename T> class My_AVL:protected BST<typename T>
 {
 	public:
 	BinNodePosi(T) root() { return _root; }
@@ -108,4 +108,4 @@ template <typename T> class AVL:protected BST<typename T>
 };
 
 
-#endif // !AVL_Tree#pragma once
+#endif // !MY_AVL#pragma once

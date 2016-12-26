@@ -1,8 +1,8 @@
 #ifndef _HEADERNAME_Mystack
 #define _HEADERNAME_Mystack
-#include "Myvector.h"
+#include "My_Vector.h"
 //向量派生栈
-template <typename T> class Mystack:public MyVector<typename T>
+template <typename T> class Mystack:public My_Vector<typename T>
 {
 	public:
 	//入栈

@@ -15,31 +15,37 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mystack.h">
+    <ClInclude Include="My_BST.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Myvector.h">
+    <ClInclude Include="My_AVL.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Mylist.h">
+    <ClInclude Include="My_BinTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Myqueue.h">
+    <ClInclude Include="My_BTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="BinTree.h">
+    <ClInclude Include="My_P_Queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="BST.h">
+    <ClInclude Include="My_List.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="AVL.h">
+    <ClInclude Include="My_Queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Splay.h">
+    <ClInclude Include="My_Stack.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="BTree.h">
+    <ClInclude Include="My_Vector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Priority_Queue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="My_Splay.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

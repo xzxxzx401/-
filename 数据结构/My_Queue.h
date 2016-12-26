@@ -1,9 +1,9 @@
 #ifndef _HEADERNAME_Myqueue
 #define _HEADERNAME_Myqueue
 
-#include "Mylist.h"
+#include "My_List.h"
 //由链表派生队列
-template <typename T> class Myqueue:public Mylist<typename T>
+template <typename T> class My_Queue:public My_List<typename T>
 {
 	public:
 	//入队

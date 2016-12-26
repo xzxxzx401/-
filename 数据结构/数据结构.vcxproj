@@ -112,15 +112,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AVL.h" />
-    <ClInclude Include="BinTree.h" />
-    <ClInclude Include="BST.h" />
-    <ClInclude Include="BTree.h" />
-    <ClInclude Include="Mylist.h" />
-    <ClInclude Include="Myqueue.h" />
-    <ClInclude Include="Mystack.h" />
-    <ClInclude Include="Myvector.h" />
-    <ClInclude Include="Splay.h" />
+    <ClInclude Include="My_AVL.h" />
+    <ClInclude Include="My_BinTree.h" />
+    <ClInclude Include="My_BST.h" />
+    <ClInclude Include="My_BTree.h" />
+    <ClInclude Include="My_P_Queue.h" />
+    <ClInclude Include="My_List.h" />
+    <ClInclude Include="My_Queue.h" />
+    <ClInclude Include="My_Stack.h" />
+    <ClInclude Include="My_Vector.h" />
+    <ClInclude Include="My_Priority_Queue.h" />
+    <ClInclude Include="My_Splay.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bf因子求avl高度.cpp">

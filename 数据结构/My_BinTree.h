@@ -1,12 +1,12 @@
-#ifndef BinaryTree
-#define BinaryTree
+#ifndef MY_BINTREE
+#define MY_BINTREE
 #include<algorithm>
 #define BinNodePosi(T) BinNode<T>*
 #define get_hight(p) ((p) ? (p)->hight : -1)
 #define taller_child(p) (get_hight(p->lc)>get_hight(p->rc)?p->lc:p->rc)
 enum RBColor{ RB_RED, RB_BLACK };
 
-template <typename T> class BinNode
+template <typename T> class My_BinNode
 {
 	public:
 	//带参不带参构造，析构
@@ -61,7 +61,7 @@ template <typename T> class BinNode
 	RBColor color; //颜色（红黑树）
 };
 
-template <typename T> class BinTree
+template <typename T> class My_BinTree
 {
 
 	protected:
@@ -147,4 +147,4 @@ template <typename T> class BinTree
 };
 
 
-#endif // !BinTree#pragma once
+#endif // !MY_BINTREE#pragma once

@@ -1,15 +1,11 @@
 #ifndef _HEADERNAME_Myvector
 #define _HEADERNAME_Myvector
 
-//#include <cstdio>
-//#include <cstring>
-//#include <iostream>
-//#include <algorithm>
 
 typedef int Rank;
 
 const int DEFAULT_CAPACITY=8;//默认容量
-template <typename T> class MyVector
+template <typename T> class My_Vector
 {
 	private:
 	Rank _size;//实际规模

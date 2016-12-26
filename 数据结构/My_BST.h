@@ -1,9 +1,9 @@
-#ifndef BinSearchTree
-#define BinSearchTree
+#ifndef MY_BST
+#define MY_BST
 
-#include "BinTree.h"
+#include"My_BinTree.h"
 
-template <typename T> class BST :protected BinTree<typename T>
+template <typename T> class My_BST :protected My_BinTree<typename T>
 {
 	//bst模板类 虚方法的查找插入删除
 	protected:
@@ -73,4 +73,4 @@ template <typename T> class BST :protected BinTree<typename T>
 };
 
 
-#endif // !BinSearchTree#pragma once
+#endif // !MY_BST#pragma once

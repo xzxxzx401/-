@@ -4,7 +4,7 @@
 #define ListNodePosi(T) Mylist_Node<T>*
 typedef int Rank;//秩
 
-template <typename T> struct Mylist_Node//双向链表节点封装
+template <typename T> struct My_List_Node//双向链表节点封装
 {
 	ListNodePosi(T) _prev;//前驱指针
 	T _data;//数据域
@@ -33,7 +33,7 @@ template <typename T> struct Mylist_Node//双向链表节点封装
 	}
 
 };
-template <typename T> class Mylist//带首末节点的双向链表
+template <typename T> class My_List//带首末节点的双向链表
 {
 	private:
 	ListNodePosi(T) _header;//首节点

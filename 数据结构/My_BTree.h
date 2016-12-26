@@ -1,13 +1,13 @@
-#ifndef BTREE_H
-#define BTREE_H
-#include "Myvector.h"
+#ifndef MY_BTREE
+#define MY_BTREE
+#include "My_Vector.h"
 
 #define BTNodePosi(T) BTNode<T>*
 #define Swap(a,b) {int tmp=a;a=b;b=tmp;}
 typedef int Rank;
 
 //BTNode节点类
-template <typename T> class BTNode
+template <typename T> class My_BTNode
 {
 	protected:
 	BTNodePosi(T) parent;
@@ -35,7 +35,7 @@ template <typename T> class BTNode
 	//BTNode不需要其他方法，因为构造出来就是根节点，不需要插入的方法
 };
 
-template <typename T> class BTree
+template <typename T> class My_BTree
 {	
 	protected:
 	BTNodePosi(T) _root;//根节点
@@ -196,4 +196,4 @@ template <typename T> class BTree
 		return true;
 	}
 };
-#endif // !BTREE
+#endif // !MY_BTREE

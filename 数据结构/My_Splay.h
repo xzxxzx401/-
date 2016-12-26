@@ -1,10 +1,10 @@
-#ifndef SPLAY_TREE
-#define SPLAY_TREE
-#include"BST.h"
-#include"BinTree.h"
+#ifndef MY_SPLAY
+#define MY_SPLAY
+#include"My_BST.h"
+#include"My_BinTree.h"
 #define IsLc(x) (x->parent!=nullptr?(x->parent->lc==x?true:false):(false))
 
-template <typename T> class Splay:protected BST<typename T>//伸展树，双层伸展
+template <typename T> class Splay:protected My_BST<typename T>//伸展树，双层伸展
 {
 	protected:
 	BinNodePosi(T) splay(BinNodePosi(T) v)//从v开始伸展,返回伸展后的树根
@@ -142,4 +142,4 @@ template <typename T> class Splay:protected BST<typename T>//伸展树，双层伸展
 
 
 
-#endif // !SPLAY_TREE#pragma once
+#endif // !SPLAY#pragma once
