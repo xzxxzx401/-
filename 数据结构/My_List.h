@@ -42,9 +42,9 @@ template <typename T> class My_List//带首末节点的双向链表
 
 	public:
 	//构造
-	Mylist(){ init(); }
+	My_List(){ init(); }
 	//析构
-	~Mylist(){ clear();/*delete _header;delete _trailer;*/ }
+	~My_List(){ clear();/*delete _header;delete _trailer;*/ }
 	//重载[]实现下标访问
 	T& operator [](Rank r){ ListNodePosi(T) p=first();while(r--) p=p->_succ;return p->_data; }
 	//返回头节点(第一个元素)

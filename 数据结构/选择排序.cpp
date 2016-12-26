@@ -4,6 +4,7 @@
 #include<algorithm>
 #include<cstring>
 #include<ctime>
+#include"My_Priority_Queue.h"
 
 using namespace std;
 void SelectSort(int a[],int lo,int hi)

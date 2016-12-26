@@ -7,7 +7,7 @@ typedef int Rank;
 const int DEFAULT_CAPACITY=8;//默认容量
 template <typename T> class My_Vector
 {
-	private:
+	protected:
 	Rank _size;//实际规模
 	int _capacity;//目前容量
 	T *_elem;//数据域
@@ -41,11 +41,11 @@ template <typename T> class My_Vector
 
 	public:
 	//构造
-	MyVector(int _c=DEFAULT_CAPACITY){ _elem=new T[_capacity=_c];_size=0; }
+	My_Vector(int _c=DEFAULT_CAPACITY){ _elem=new T[_capacity=_c];_size=0; }
 	//拷贝构造
-	MyVector(MyVector<T> const &_oldvec) { copyFrom(_oldvec._elem,0,_oldvec._size); }
+	My_Vector(My_Vector<T> const &_oldvec) { copyFrom(_oldvec._elem,0,_oldvec._size); }
 	//析构
-	~MyVector(){ delete[] _elem; }
+	~My_Vector(){ delete[] _elem; }
 	//重载[]，支持方括号访问
 	T& operator [](Rank r) { if(0<=r&&r<_size) return _elem[r]; }
 	//插入末尾
