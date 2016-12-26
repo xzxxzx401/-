@@ -21,7 +21,7 @@ int main()
 	{
 		cout<<pq.pop()<<' ';
 	}
-	cout<<pq.top()<<endl;
+	cout<<endl<<pq.top()<<endl;
 
 	system("pause");
 	return 0;

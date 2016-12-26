@@ -6,7 +6,6 @@
 #define lchild(i) (i<<1|1)
 #define rchild(i) ((i+1)<<1)
 #define parent(i) ((i-1)>>1)
-#define Swap(a,b) T __t=a;a=b;b=__t
 
 template <typename T> class Priority_Queue :public My_P_Queue<T>,protected My_Vector<T>
 {
@@ -40,7 +39,7 @@ template <typename T> class Priority_Queue :public My_P_Queue<T>,protected My_Ve
 				if(p==n) break;
 			}
 			else break;
-			Swap(_elem[n],_elem[p]);
+			T __t=_elem[n];_elem[n]=_elem[p];_elem[p]=__t;
 			n=p;
 		}
 		_elem[n]=_temp;
