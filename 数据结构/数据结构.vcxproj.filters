@@ -98,7 +98,7 @@
     <ClCompile Include="选择排序.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="yuan.cpp">
+    <ClCompile Include="堆，堆排序.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
