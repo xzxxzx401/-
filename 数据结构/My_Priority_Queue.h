@@ -1,5 +1,5 @@
-#ifndef PRIORITY_QUEUE
-#define PRIORITY_QUEUE
+#ifndef MY_PRIORITY_QUEUE
+#define MY_PRIORITY_QUEUE
 #include"My_Vector.h"
 #include"My_P_Queue.h"
 
@@ -10,7 +10,7 @@
 template <typename T> class Priority_Queue :public My_P_Queue<T>,protected My_Vector<T>
 {
 	protected:
-	int PushUp(int n,int head=0)//参数是待pushup元素的rank与上滤最大高度,上滤
+	int PushUp(int n,int head=0)//上滤,参数是待pushup元素的rank与上滤最大高度
 	{
 		T _temp=_elem[n];
 		int p;
@@ -26,7 +26,7 @@ template <typename T> class Priority_Queue :public My_P_Queue<T>,protected My_Ve
 		_elem[n]=_temp;
 		return n;
 	}
-	int PushDown(int n, int tail)//参数是待pushdown元素的rank与下滤最大深度,下滤
+	int PushDown(int n, int tail)//下滤,参数是待pushdown元素的rank与下滤最大深度
 	{
 		T _temp=_elem[n];
 		int p;
@@ -45,14 +45,29 @@ template <typename T> class Priority_Queue :public My_P_Queue<T>,protected My_Ve
 		_elem[n]=_temp;
 		return n;
 	}
-
+	void heapify(int start, int tail)//从上往下的下滤,O(n)
+	{
+		int LastParent=parent(tail-1);
+		for(int i=LastParent;i>=start;i--) PushDown(i, tail);
+	}
 	public:
+	Priority_Queue(){}
+	Priority_Queue(const T* A,int start,int tail)//[start,tail)
+	{
+		My_Vector::copyFrom(A, start, tail);
+		heapify(start, tail);
+	}
+	Priority_Queue(My_Vector Vec)//未测试！！
+	{
+		My_Vector(vec);
+		heapify(0, _size);
+	}
+	const T top() { return (_elem[0]); }
 	void push(T _e)
 	{
 		My_Vector::push_back(_e);
 		PushUp(_size-1);
 	}
-	const T top() { return _elem[0]; }
 	T pop()
 	{
 		T _temp=_elem[0];
@@ -60,7 +75,7 @@ template <typename T> class Priority_Queue :public My_P_Queue<T>,protected My_Ve
 		PushDown(0,_size);
 		return _temp;
 	}
-
+	bool empty() { return My_Vector::empty(); }
 };
 
 #endif // !PRIORITY_QUEUE#pragma once

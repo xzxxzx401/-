@@ -8,23 +8,25 @@
 
 using namespace std;
 
+int a[100000];
 int main()
 {
-	Priority_Queue<int> pq;
-	for(int i=10;i>=0;i--)
+	clock_t t1,t2;
+	for(int i=0;i<100000;i++) a[i]=100001-i;
+	t1=clock();
+	Priority_Queue<int> pq(a,0,100000);
+	for(int i=0;!pq.empty();i++)
 	{
-		pq.push(i);
-		cout<<pq.top()<<' ';
+		if(i%10000==0) cout<<pq.pop()<<' ';
+		else pq.pop();
 	}
-	cout<<endl;
-	for(int i=0;i<5;i++)
-	{
-		cout<<pq.pop()<<' ';
-	}
-	cout<<endl<<pq.top()<<endl;
-
+	t2=clock();
+	cout<<endl<<"time:"<<t2-t1<<endl;
+	t1=clock();
+	sort(a,a+100000);
+	for(int i=0;i<100000;i+=10000) cout<<a[i]<<' ';
+	t2=clock();
+	cout<<endl<<"time:"<<t2-t1<<endl;
 	system("pause");
 	return 0;
-
-
 }
