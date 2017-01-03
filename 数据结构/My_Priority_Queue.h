@@ -7,7 +7,7 @@
 #define rchild(i) ((i+1)<<1)
 #define parent(i) ((i-1)>>1)
 
-template <typename T> class Priority_Queue :public My_P_Queue<T>,protected My_Vector<T>
+template <typename T> class My_Priority_Queue :public My_P_Queue<T>,protected My_Vector<T>
 {
 	protected:
 	int PushUp(int n,int head=0)//上滤,参数是待pushup元素的rank与上滤最大高度
@@ -51,13 +51,13 @@ template <typename T> class Priority_Queue :public My_P_Queue<T>,protected My_Ve
 		for(int i=LastParent;i>=start;i--) PushDown(i, tail);
 	}
 	public:
-	Priority_Queue(){}
-	Priority_Queue(const T* A,int start,int tail)//[start,tail)
+	My_Priority_Queue(){}
+	My_Priority_Queue(const T* A,int start,int tail)//[start,tail)
 	{
 		My_Vector::copyFrom(A, start, tail);
 		heapify(start, tail);
 	}
-	Priority_Queue(My_Vector Vec)//未测试！！
+	My_Priority_Queue(My_Vector Vec)//未测试！！
 	{
 		My_Vector(vec);
 		heapify(0, _size);

@@ -5,12 +5,12 @@
 #include<string>
 #include<vector>
 #include<ctime>
-#include"BinTree.h"
-#include"BST.h"
-#include"AVL.h"
-#include"Myvector.h"
-#include"BTree.h"
-#include"Splay.h"
+#include"My_BinTree.h"
+#include"My_BST.h"
+#include"My_AVL.h"
+#include"My_Vector.h"
+#include"My_BTree.h"
+#include"My_Splay.h"
 #define MAX_AMOUNT 1000000
 using namespace std;
 
@@ -21,7 +21,7 @@ void test1()
 	clock_t a_test1, b_test1;
 	cout<<"bst,100000数据,10000次删除"<<endl;
 	a_test1=clock();
-	BST<int> bst_test1;
+	My_BST<int> bst_test1;
 	for(int i=0;i<MAX_AMOUNT/10;i++)
 	{
 		bst_test1.insert(i);
@@ -37,7 +37,7 @@ void test1()
 	b_test1=clock();
 	cout<<"删除："<<(double)b_test1-a_test1<<endl;
 
-	AVL<int> avl_test1;
+	My_AVL<int> avl_test1;
 	cout<<"avl,1000000数据,100000次删除"<<endl;
 	a_test1=clock();
 	for(int i=0;i<MAX_AMOUNT;i++)
@@ -81,7 +81,7 @@ void test2()
 	cout<<"bst,1000000数据,100000次删除"<<endl;
 	clock_t a_test2, b_test2;
 	a_test2=clock();
-	BST<int> bst_test2;
+	My_BST<int> bst_test2;
 	for(int i=0;i<MAX_AMOUNT;i++)
 	{
 		bst_test2.insert(rand()%MAX_AMOUNT*10);
@@ -97,7 +97,7 @@ void test2()
 	b_test2=clock();
 	cout<<"删除："<<(double)b_test2-a_test2<<endl;
 
-	AVL<int> avl_test2;
+	My_AVL<int> avl_test2;
 	cout<<"avl,1000000数据,100000次删除"<<endl;
 	a_test2=clock();
 	for(int i=0;i<MAX_AMOUNT;i++)
@@ -140,7 +140,7 @@ int main()
 	//test1();
 	//test2();
 	////test3();
-	BTree<int> bt(3);
+	My_BTree<int> bt(3);
 	
 	bt.insert(20);
 	bt.insert(30);

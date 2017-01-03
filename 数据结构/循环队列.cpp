@@ -3,10 +3,10 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
-#include "Myvector.h"
-#include "Mystack.h"
-#include "Mylist.h"
-#include "Myqueue.h"
+#include "My_Vector.h"
+#include "My_Stack.h"
+#include "My_List.h"
+#include "My_Queue.h"
 #include <string>
 using namespace std;
 

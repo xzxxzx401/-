@@ -1,5 +1,5 @@
 #include<iostream>
-#include"AVL.h"
+#include"My_AVL.h"
 
 using namespace std;
 
@@ -18,7 +18,7 @@ int hight(BinNodePosi(int) x)
 
 int main()
 {
-	AVL<int> avl;
+	My_AVL<int> avl;
 	for(int i=0;i<400;i++)
 	{
 		avl.insert(i);

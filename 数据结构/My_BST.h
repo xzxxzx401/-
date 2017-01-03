@@ -52,7 +52,7 @@ template <typename T> class My_BST :protected My_BinTree<typename T>
 	{
 		BinNodePosi(T)& x=search(e); 
 		if(x) return x;
-		x=new BinNode<T>(e, _hot); 
+		x=new My_BinNode<T>(e, _hot); 
 		_size++;
 		updateHightAbove(x);
 		return x;
@@ -67,8 +67,8 @@ template <typename T> class My_BST :protected My_BinTree<typename T>
 		updateHightAbove(_hot);
 		return true;
 	}
-	void travInorder() { return BinTree::travInorder(); }
-	BinNodePosi(T) root() { return BinTree::root(); }
+	void travInorder() { return My_BinTree::travInorder(); }
+	BinNodePosi(T) root() { return My_BinTree::root(); }
 	int size() { return _size; }
 };
 

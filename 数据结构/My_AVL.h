@@ -7,16 +7,16 @@
 #define AVL_Balenced(x) ((-2<AVL_BalFactor(x)) && (AVL_BalFactor(x)<2))//平衡么？
 
 
-template <typename T> class My_AVL:protected BST<typename T>
+template <typename T> class My_AVL:protected My_BST<typename T>
 {
 	public:
 	BinNodePosi(T) root() { return _root; }
-	BinNodePosi(T)& search(const T& e) { return BST::search(e); }
+	BinNodePosi(T)& search(const T& e) { return My_BST::search(e); }
 
 	BinNodePosi(T) insert(const T& e)
 	{
 		BinNodePosi(T) & x=search(e); if(x) return x; //确认目标节点不存在
-		BinNodePosi(T) xx=x=new BinNode<T>(e, _hot); _size++;
+		BinNodePosi(T) xx=x=new My_BinNode<T>(e, _hot); _size++;
 		//注意以后可能旋转 故在此处不更新高度 也不能调用BST::insert
 		for(BinNodePosi(T) h=_hot;h;h=h->parent)//寻找失衡点并重新平衡
 		{
@@ -34,7 +34,7 @@ template <typename T> class My_AVL:protected BST<typename T>
 
 	bool remove(const T& e)
 	{
-		if(!BST::remove(e)) return false;
+		if(!My_BST::remove(e)) return false;
 
 		for(BinNodePosi(T) h=_hot;h;h=h->parent)
 		{
@@ -47,7 +47,7 @@ template <typename T> class My_AVL:protected BST<typename T>
 		}
 		return true;
 	}
-	void travInorder() { return BST::travInorder(); }
+	void travInorder() { return My_BST::travInorder(); }
 	int size() { return _size; }
 	
 	protected:

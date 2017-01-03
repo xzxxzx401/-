@@ -1,7 +1,7 @@
 #ifndef _HEADERNAME_Mylist
 #define _HEADERNAME_Mylist
 
-#define ListNodePosi(T) Mylist_Node<T>*
+#define ListNodePosi(T) My_List_Node<T>*
 typedef int Rank;//秩
 
 template <typename T> struct My_List_Node//双向链表节点封装
@@ -9,13 +9,13 @@ template <typename T> struct My_List_Node//双向链表节点封装
 	ListNodePosi(T) _prev;//前驱指针
 	T _data;//数据域
 	ListNodePosi(T) _succ;//后继指针
-	Mylist_Node(){}//构造
-	Mylist_Node(T __data,ListNodePosi(T) __prev=NULL,ListNodePosi(T) __succ=NULL){ _data=__data;_prev=__prev;_succ=__succ; }//构造
+	My_List_Node(){}//构造
+	My_List_Node(T __data,ListNodePosi(T) __prev=NULL,ListNodePosi(T) __succ=NULL){ _data=__data;_prev=__prev;_succ=__succ; }//构造
 
 	//前插函数
 	ListNodePosi(T) InsertAs_Prev(T const &_e)
 	{
-		ListNodePosi(T) _x=new Mylist_Node(_e,_prev,this);
+		ListNodePosi(T) _x=new My_List_Node(_e,_prev,this);
 		/*prev指this的前驱，this是当前调用节点，
 		这样会让x的prev指向this的前驱，x的succ指向this，达到插入目的
 		*/
@@ -26,7 +26,7 @@ template <typename T> struct My_List_Node//双向链表节点封装
 	//后插函数，同上
 	ListNodePosi(T) InsertAs_Succ(T const &_e)
 	{
-		ListNodePosi(T) _x=new Mylist_Node(_e,this,_succ);//同上
+		ListNodePosi(T) _x=new My_List_Node(_e,this,_succ);//同上
 		_succ->_prev=_x;
 		_succ=_x;
 		return _x;
@@ -88,7 +88,7 @@ template <typename T> class My_List//带首末节点的双向链表
 	//创建首末节点并连接彼此，初始化一个链表
 	void init()
 	{ 
-		_header=new Mylist_Node<T>;_trailer=new Mylist_Node<T>;
+		_header=new My_List_Node<T>;_trailer=new My_List_Node<T>;
 		_header->_prev=NULL;_header->_succ=_trailer;
 		_trailer->_prev=_header;_trailer->_succ=NULL; 
 		_size=0;

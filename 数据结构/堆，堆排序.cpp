@@ -14,7 +14,7 @@ int main()
 	clock_t t1,t2;
 	for(int i=0;i<100000;i++) a[i]=100001-i;
 	t1=clock();
-	Priority_Queue<int> pq(a,0,100000);
+	My_Priority_Queue<int> pq(a,0,100000);
 	for(int i=0;!pq.empty();i++)
 	{
 		if(i%10000==0) cout<<pq.pop()<<' ';

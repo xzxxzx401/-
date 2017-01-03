@@ -101,5 +101,11 @@
     <ClCompile Include="堆，堆排序.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="先序建立二叉树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dag最长路hxy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

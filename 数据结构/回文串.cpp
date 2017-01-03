@@ -3,17 +3,15 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
-#include "Myvector.h"
-#include "Mystack.h"
-#include "Mylist.h"
-#include "Myqueue.h"
+#include "My_Stack.h"
+#include "My_Queue.h"
 #include <string>
 using namespace std;
 
 int main()
 {
-	Myqueue<char> que;
-	Mystack<char> sta;
+	My_Queue<char> que;
+	My_Stack<char> sta;
 	char t;
 	while(scanf("%c",&t)&&t!='#')
 	{
@@ -33,5 +31,5 @@ int main()
 	if(!flag) printf("输入是回文串！\n");
 	else printf("输入不是回文串！\n");
 	system("pause");
-
+	return 0;
 }

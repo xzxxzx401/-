@@ -1,7 +1,7 @@
 #ifndef MY_BINTREE
 #define MY_BINTREE
 #include<algorithm>
-#define BinNodePosi(T) BinNode<T>*
+#define BinNodePosi(T) My_BinNode<T>*
 #define get_hight(p) ((p) ? (p)->hight : -1)
 #define taller_child(p) (get_hight(p->lc)>get_hight(p->rc)?p->lc:p->rc)
 enum RBColor{ RB_RED, RB_BLACK };
@@ -10,15 +10,15 @@ template <typename T> class My_BinNode
 {
 	public:
 	//带参不带参构造，析构
-	BinNode() :_data(0), parent(nullptr), lc(nullptr), rc(nullptr), hight(0), npl(0), color(RB_RED) {}
-	BinNode(T e, BinNodePosi(T) p=nullptr, BinNodePosi(T) lc=nullptr, BinNodePosi(T) rc=nullptr, int h=0, int l=1, RBColor c=RB_RED) :
+	My_BinNode() :_data(0), parent(nullptr), lc(nullptr), rc(nullptr), hight(0), npl(0), color(RB_RED) {}
+	My_BinNode(T e, BinNodePosi(T) p=nullptr, BinNodePosi(T) lc=nullptr, BinNodePosi(T) rc=nullptr, int h=0, int l=1, RBColor c=RB_RED) :
 		_data(e), parent(p), lc(lc), rc(rc), hight(h), npl(l), color(c) { }
-	~BinNode() {};
+	~My_BinNode() {};
 
 	//封装新节点，作为当前节点左孩子插入
-	BinNodePosi(T) insertAsLC(T const &_e) { return lc=new BinNode(_e, this); }
+	BinNodePosi(T) insertAsLC(T const &_e) { return lc=new My_BinNode(_e, this); }
 	//封装新节点，作为当前节点右孩子插入
-	BinNodePosi(T) insertAsRC(T const &_e) { return rc=new BinNode(_e, this); }
+	BinNodePosi(T) insertAsRC(T const &_e) { return rc=new My_BinNode(_e, this); }
 	//修改节点值
 	BinNodePosi(T) modefyNode(T const &_e) { _data=_e;return this; }
 	//统计当前节点为根的子树的节点数目和
@@ -48,8 +48,8 @@ template <typename T> class My_BinNode
 	}
 
 	//层序遍历 void travLevel(){}
-	bool operator <(BinNode const & _n) { return _data<_n._data; }
-	bool operator ==(BinNode const &_n) { return _data==_n._data; }
+	bool operator <(My_BinNode const & _n) { return _data<_n._data; }
+	bool operator ==(My_BinNode const &_n) { return _data==_n._data; }
 
 
 
@@ -95,14 +95,14 @@ template <typename T> class My_BinTree
 	BinNodePosi(T) _root;
 
 	public:
-	BinTree() :_size(0), _root(NULL) {}
-	~BinTree() {}
+	My_BinTree() :_size(0), _root(NULL) {}
+	~My_BinTree() {}
 	virtual int size() { return _size; }
 	bool empty() { return (_root==nullptr); }
 	bool is_root(BinNodePosi(T) x) { return x==_root; }
 	virtual BinNodePosi(T) root() const { return _root; }
 	//插入根节点
-	BinNodePosi(T) insertAsRoot(T const& e) { _size=1;_root=new BinNode<T>(e);return _root; }
+	BinNodePosi(T) insertAsRoot(T const& e) { _size=1;_root=new My_BinNode<T>(e);return _root; }
 
 	//作为孩子插入，返回新插入节点
 	BinNodePosi(T) insertAsLC(BinNodePosi(T) _x, T const& _e)
@@ -118,7 +118,7 @@ template <typename T> class My_BinTree
 		return _x->rc;
 	}
 	//接入一棵子树
-	BinNodePosi(T) attachAsLC(BinNodePosi(T) _x, BinTree<T>* _S)
+	BinNodePosi(T) attachAsLC(BinNodePosi(T) _x, My_BinTree<T>* _S)
 	{
 		if(_x->lc) remove(_x->lc);
 		_x->lc=_S->_root;
@@ -128,7 +128,7 @@ template <typename T> class My_BinTree
 		delete _S;
 		return _x->lc;
 	}
-	BinNodePosi(T) attachAsRC(BinNodePosi(T) _x, BinTree<T>* _S)
+	BinNodePosi(T) attachAsRC(BinNodePosi(T) _x, My_BinTree<T>* _S)
 	{
 		if(_x->rc) remove(_x->rc);
 		_x->rc=_S->_root;

@@ -51,7 +51,7 @@ template <typename T> class My_Vector
 	//插入末尾
 	T& push_back(const T c){ expand();_elem[_size++]=c;return _elem[_size-1]; }
 	//删除末尾元素
-	T& pop_back(){ _size--;T _temp=_elem[_size];shrink();return _temp; }
+	T pop_back(){ _size--;T _temp=*(_elem+_size);shrink();return _temp; }
 	//查询元素个数
 	Rank size(){ return _size; }
 	//查找函数，找不到返回_lo-1

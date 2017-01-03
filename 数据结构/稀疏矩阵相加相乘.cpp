@@ -3,10 +3,10 @@
 #include <cstring>
 //#include <iostream>
 #include <algorithm>
-#include "Myvector.h"
-#include "Mystack.h"
-#include "Mylist.h"
-#include "Myqueue.h"
+#include "My_Vector.h"
+#include "My_Stack.h"
+#include "My_List.h"
+#include "My_Queue.h"
 #include <string>
 #include <time.h>
 
@@ -20,7 +20,7 @@ struct Ele{//矩阵元素
 };
 
 struct Martrix{//矩阵
-	MyVector<Ele> Martrix_ele;//矩阵元素的三元组表
+	My_Vector<Ele> Martrix_ele;//矩阵元素的三元组表
 	int line,cross;//line行数，cross是列数
 };
 
@@ -94,7 +94,7 @@ bool mul(Martrix &A,Martrix &B,Martrix &C)//乘法，返回成功(1)与否(0)
 	if(A.cross==B.line)//可乘
 	{
 		C.cross=B.cross;C.line=A.line;
-		MyVector<int> t_vec;//临时数组，用于存放每一行的结果
+		My_Vector<int> t_vec;//临时数组，用于存放每一行的结果
 		for(int r=0;r < B.cross;r++) t_vec.push_back(0);//初始化
 		for(int p=0,row=0;p < A.Martrix_ele.size();)//处理A矩阵每一行元素
 		{

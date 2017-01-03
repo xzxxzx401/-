@@ -41,7 +41,7 @@ void init(int n,node* &head)//初始化报数队列
 void moni(int n,int y,int x)//模拟出队
 {
 	node *head=NULL;
-	init(n,head);//构造循环单链表
+	init(n,head);//构造不带头结点的单循环单链表
 	node *now=head;
 	node *pre=head;
 	for(int i=0;i<x-1;i++) now=now->next;//now指针指向开始报数的人
@@ -50,16 +50,22 @@ void moni(int n,int y,int x)//模拟出队
 	int res,rs_check;
 	for(int i=0;i<n;i++)
 	{
-		for(int j=0;j<y-1;j++)
+		for(int j=0;j<y-1;j++)//找到出队人
 		{
 			now=now->next;
 			pre=pre->next;
 		}
 		cout<<now->data<<"号出队"<<endl;
 
-		if(now==head) head=head->next;
+		node* la=now;//free使用
+
+		/*重新连接链表*/
+		if(now==head) head=head->next;//处理head出对情况
 		now=now->next;
 		pre->next=now;
+		/*重新连接链表*/
+
+		free(la);//释放内存
 	}
 }
 void check(int n,int y,int x)//公式计算
@@ -82,4 +88,5 @@ int main()
 	moni(n,x,y);
 	check(n,x,y);
 	system("pause");
+	return 0;
 }

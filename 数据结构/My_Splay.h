@@ -70,17 +70,17 @@ template <typename T> class Splay:protected My_BST<typename T>//伸展树，双层伸展
 
 	public:
 
-	void travInorder() { return BST::travInorder(); }
+	void travInorder() { return My_BST::travInorder(); }
 	BinNodePosi(T)& search(const T& e)
 	{
-		BinNodePosi(T) x=BST::search(e);
+		BinNodePosi(T) x=My_BST::search(e);
 		_root=splay(x ? x : _hot);//查找失败就从父亲开始伸展，否则从查找结果开始伸展
 		return _root;
 
 	}
 	BinNodePosi(T) insert(const T& e)
 	{
-		if(!_root) { _size++; return _root=new BinNode<T>(e); } //处理原树为空的退化情况
+		if(!_root) { _size++; return _root=new My_BinNode<T>(e); } //处理原树为空的退化情况
 		BinNodePosi(T) x=search(e);
 		if(x&&x->_data==e) return x;
 		else

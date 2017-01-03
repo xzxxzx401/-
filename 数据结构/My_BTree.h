@@ -2,24 +2,24 @@
 #define MY_BTREE
 #include "My_Vector.h"
 
-#define BTNodePosi(T) BTNode<T>*
+#define BTNodePosi(T) My_BTNode<T>*
 #define Swap(a,b) {int tmp=a;a=b;b=tmp;}
 typedef int Rank;
 
-//BTNode节点类
+//My_BTNode节点类
 template <typename T> class My_BTNode
 {
 	protected:
 	BTNodePosi(T) parent;
-	MyVector<T> key;
-	MyVector<BTNodePosi(T)> child;
+	My_Vector<T> key;
+	My_Vector<BTNodePosi(T)> child;
 
 	public:
 
-	template <typename T> friend class BTree;
-	BTNode() { parent=nullptr;child.push_back(nullptr); }
-	BTNode(T e, BTNodePosi(T) lc=nullptr, BTNodePosi(T) rc=nullptr)
-	{//注意，BTNode的构造只可能作为新根节点构造出来，因为B树长高一定是往根上方长
+	template <typename T> friend class My_BTree;
+	My_BTNode() { parent=nullptr;child.push_back(nullptr); }
+	My_BTNode(T e, BTNodePosi(T) lc=nullptr, BTNodePosi(T) rc=nullptr)
+	{//注意，My_BTNode的构造只可能作为新根节点构造出来，因为B树长高一定是往根上方长
 		//所以parent一定是nullptr，一定初始只有两个孩子
 		//但两个孩子不一定都在存在，想想BTree最开始插入一个节点
 		parent=nullptr;
@@ -27,12 +27,12 @@ template <typename T> class My_BTNode
 		child.push_back(lc);child.push_back(rc);
 		if(lc) lc->parent=this;if(rc) rc->parent=this;//完成孩子的连接
 	}
-	~BTNode()
+	~My_BTNode()
 	{
-		key.~MyVector();
-		child.~MyVector();
+		key.~My_Vector();
+		child.~My_Vector();
 	}
-	//BTNode不需要其他方法，因为构造出来就是根节点，不需要插入的方法
+	//My_BTNode不需要其他方法，因为构造出来就是根节点，不需要插入的方法
 };
 
 template <typename T> class My_BTree
@@ -48,7 +48,7 @@ template <typename T> class My_BTree
 		{
 			Rank mid=v->key.size()/2;
 			//Myvector可以提供专门的分裂方法，暂时不实现
-			BTNodePosi(T) u=new BTNode<T>();u->child.clear();
+			BTNodePosi(T) u=new My_BTNode<T>();u->child.clear();
 			for(int i=mid+1;i<_order;i++)
 			{
 				u->child.push_back(v->child.remove(mid+1));
@@ -59,7 +59,7 @@ template <typename T> class My_BTree
 			T e=v->key.pop_back();
 			BTNodePosi(T) p=v->parent;
 			//若已经到根了，那么新建一个根节点，长高一下
-			if(!p) { _root=p=new BTNode<T>();p->child[0]=v;v->parent=p; }
+			if(!p) { _root=p=new My_BTNode<T>();p->child[0]=v;v->parent=p; }
 			Rank r_p=1+(p->key).search(v->key[0]);//找到插入位置 注意加1
 			
 			p->key.insert(r_p, e);
@@ -149,10 +149,10 @@ template <typename T> class My_BTree
 
 	public:
 
-	template <typename T> friend class BTNode;
+	template <typename T> friend class My_BTNode;
 
-	BTree(int order=3) { _order=order;_size=0;_hot=nullptr;_root=new BTNode<T>(); }
-	~BTree(){}//递归析构 懒得写了 而且怕栈溢出
+	My_BTree(int order=3) { _order=order;_size=0;_hot=nullptr;_root=new My_BTNode<T>(); }
+	~My_BTree(){}//递归析构 懒得写了 而且怕栈溢出
 	const BTNodePosi(T)& root() { return _root; }//返回根的引用
 	const int order() { return _order; }//返回阶数
 	const int size() { return _size; }//元素数目

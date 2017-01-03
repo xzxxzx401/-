@@ -3,10 +3,10 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
-//#include "Myvector.h"
-//#include "Mystack.h"
-//#include "Mylist.h"
-#include "Myqueue.h"
+//#include "My_Vector.h"
+//#include "My_Stack.h"
+//#include "My_List.h"
+#include "My_Queue.h"
 #include<queue>
 #include <string>
 using namespace std;
@@ -71,7 +71,7 @@ struct node{
 };
 int degree(node* root)
 {
-	Myqueue<node*> que; que.push(root);
+	My_Queue<node*> que; que.push(root);
 	int num=0;
 	while(!que.empty())
 	{
