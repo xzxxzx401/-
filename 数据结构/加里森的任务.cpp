@@ -38,7 +38,7 @@ void init(int n,node* &head)//初始化报数队列
 	for(int i=2;i<=n;i++) make_node(pa,i);
 	pa->next=head;
 }
-void moni(int n,int y,int x)//模拟出队
+void moni(int n,int x,int y)//模拟出队
 {
 	node *head=NULL;
 	init(n,head);//构造不带头结点的单循环单链表
@@ -68,7 +68,7 @@ void moni(int n,int y,int x)//模拟出队
 		free(la);//释放内存
 	}
 }
-void check(int n,int y,int x)//公式计算
+void check(int n,int x,int y)//公式计算
 {
 	//y--;
 	int res=0;
