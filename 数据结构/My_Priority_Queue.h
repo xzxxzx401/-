@@ -45,7 +45,7 @@ template <typename T> class My_Priority_Queue :public My_P_Queue<T>,protected My
 		_elem[n]=_temp;
 		return n;
 	}
-	void heapify(int start, int tail)//从上往下的下滤,O(n)
+	void heapify(int start, int tail)//从下往上的下滤,O(n)
 	{
 		int LastParent=parent(tail-1);
 		for(int i=LastParent;i>=start;i--) PushDown(i, tail);
