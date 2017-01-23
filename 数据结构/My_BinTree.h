@@ -78,6 +78,7 @@ template <typename T> class My_BinTree
 			if(_b->parent->lc==_b) _b->parent->lc=nullptr;
 			if(_b->parent->rc==_b) _b->parent->rc=nullptr;
 		}
+		//cout<<_b->_data;
 		delete _b;
 	}
 	//更新高度
@@ -96,7 +97,7 @@ template <typename T> class My_BinTree
 
 	public:
 	My_BinTree() :_size(0), _root(NULL) {}
-	~My_BinTree() {}
+	~My_BinTree(){ remove(_root); }
 	virtual int size() { return _size; }
 	bool empty() { return (_root==nullptr); }
 	bool is_root(BinNodePosi(T) x) { return x==_root; }

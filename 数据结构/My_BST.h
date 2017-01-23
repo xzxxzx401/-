@@ -47,6 +47,8 @@ template <typename T> class My_BST :protected My_BinTree<typename T>
 	}
 
 	public:
+	My_BST<T>(){}
+
 	//≤È’“
 	virtual BinNodePosi(T)& search(const T& e) { return searchIn(_root, e, _hot=NULL); }
 	//≤Â»Î
