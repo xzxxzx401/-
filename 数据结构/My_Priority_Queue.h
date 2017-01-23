@@ -7,7 +7,7 @@
 #define rchild(i) ((i+1)<<1)
 #define parent(i) ((i-1)>>1)
 
-template <typename T> class My_Priority_Queue :public My_P_Queue<T>,protected My_Vector<T>
+template <typename T> class My_Priority_Queue :protected My_P_Queue<T>,protected My_Vector<T>
 {
 	protected:
 	int PushUp(int n,int head=0)//上滤,参数是待pushup元素的rank与上滤最大高度
@@ -54,10 +54,10 @@ template <typename T> class My_Priority_Queue :public My_P_Queue<T>,protected My
 	My_Priority_Queue(){}
 	My_Priority_Queue(const T* A,int start,int tail)//[start,tail)
 	{
-		My_Vector::copyFrom(A, start, tail);
+		My_Vector<T>::copyFrom(A, start, tail);
 		heapify(start, tail);
 	}
-	My_Priority_Queue(My_Vector Vec)//未测试！！
+	My_Priority_Queue(My_Vector<T> Vec)//未测试！！
 	{
 		My_Vector(vec);
 		heapify(0, _size);
@@ -65,7 +65,7 @@ template <typename T> class My_Priority_Queue :public My_P_Queue<T>,protected My
 	const T top() { return (_elem[0]); }
 	void push(T _e)
 	{
-		My_Vector::push_back(_e);
+		My_Vector<T>::push_back(_e);
 		PushUp(_size-1);
 	}
 	T pop()
@@ -75,7 +75,7 @@ template <typename T> class My_Priority_Queue :public My_P_Queue<T>,protected My
 		PushDown(0,_size);
 		return _temp;
 	}
-	bool empty() { return My_Vector::empty(); }
+	bool empty() { return My_Vector<T>::empty(); }
 };
 
 #endif // !PRIORITY_QUEUE#pragma once

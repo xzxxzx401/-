@@ -4,11 +4,14 @@
 #define ListNodePosi(T) My_List_Node<T>*
 typedef int Rank;//秩
 
-template <typename T> struct My_List_Node//双向链表节点封装
+template <typename T> class My_List_Node //双向链表节点封装
 {
+	private:
 	ListNodePosi(T) _prev;//前驱指针
 	T _data;//数据域
 	ListNodePosi(T) _succ;//后继指针
+
+	public:
 	My_List_Node(){}//构造
 	My_List_Node(T __data,ListNodePosi(T) __prev=NULL,ListNodePosi(T) __succ=NULL){ _data=__data;_prev=__prev;_succ=__succ; }//构造
 

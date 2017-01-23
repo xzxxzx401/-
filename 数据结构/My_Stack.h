@@ -2,7 +2,7 @@
 #define _HEADERNAME_Mystack
 #include "My_Vector.h"
 //向量派生栈
-template <typename T> class My_Stack:public My_Vector<typename T>
+template <typename T> class My_Stack: public My_Vector<typename T>
 {
 	public:
 	//入栈

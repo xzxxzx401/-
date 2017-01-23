@@ -5,7 +5,7 @@
 #define BTNodePosi(T) My_BTNode<T>*
 #define Swap(a,b) {int tmp=a;a=b;b=tmp;}
 typedef int Rank;
-
+template <typename>class My_BTree;
 //My_BTNode节点类
 template <typename T> class My_BTNode
 {
@@ -16,7 +16,7 @@ template <typename T> class My_BTNode
 
 	public:
 
-	template <typename T> friend class My_BTree;
+	friend class My_BTree<T>;
 	My_BTNode() { parent=nullptr;child.push_back(nullptr); }
 	My_BTNode(T e, BTNodePosi(T) lc=nullptr, BTNodePosi(T) rc=nullptr)
 	{//注意，My_BTNode的构造只可能作为新根节点构造出来，因为B树长高一定是往根上方长

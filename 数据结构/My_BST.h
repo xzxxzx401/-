@@ -23,7 +23,7 @@ template <typename T> class My_BST :protected My_BinTree<typename T>
 		}
 	}
 
-	void removeAt(BinNodePosi(T) &x, BinNodePosi(T) &hot)
+	BinNodePosi(T) removeAt(BinNodePosi(T) &x, BinNodePosi(T) &hot)
 	{
 		//注意x是个引用，改x并不是改x指针指向的元素，而是改x指向元素的值，所以else里面必须定位到parent完成链接
 		BinNodePosi(T) succ=nullptr;//被删除节点的后继
@@ -42,6 +42,8 @@ template <typename T> class My_BST :protected My_BinTree<typename T>
 		}
 		hot=now->parent;
 		if(succ) succ->parent=now->parent;
+		delete now;
+		return succ;//返回实际接替者
 	}
 
 	public:
@@ -67,8 +69,8 @@ template <typename T> class My_BST :protected My_BinTree<typename T>
 		updateHightAbove(_hot);
 		return true;
 	}
-	void travInorder() { return My_BinTree::travInorder(); }
-	BinNodePosi(T) root() { return My_BinTree::root(); }
+	void travInorder() { return My_BinTree<T>::travInorder(); }
+	BinNodePosi(T) root() { return My_BinTree<T>::root(); }
 	int size() { return _size; }
 };
 

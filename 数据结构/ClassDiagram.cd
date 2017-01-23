@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="My_AVL&lt;T&gt;" Collapsed="true">
+    <Position X="2" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAABAAAAEAIAgAAAAAAAAAAAAACAAAAAAgAA=</HashCode>
+      <FileName>My_AVL.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_BinNode&lt;T&gt;" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAICAABCAIKAAAAIAAAQAAAAAIIACAAAAwAAAAAAA=</HashCode>
+      <FileName>My_BinTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_BinTree&lt;T&gt;" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAIECIAAEAEAIAgAAgCAAAAAAAAgAAIAAIAAEI=</HashCode>
+      <FileName>My_BinTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_BST&lt;T&gt;" Collapsed="true">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABAAABAAAAECIAgAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>My_BST.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_BTNode&lt;T&gt;" Collapsed="true">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAAAgAAAAAE=</HashCode>
+      <FileName>My_BTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_BTree&lt;T&gt;" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAADIABgAAAEAIAgAAACAQAAAAAAACAAAAIAAIA=</HashCode>
+      <FileName>My_BTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_P_Queue&lt;T&gt;" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIgAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>My_P_Queue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Priority_Queue&lt;T&gt;" Collapsed="true">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="My_Vector&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="11" Y="1.048" />
+        <Point X="11" Y="1.446" />
+        <Point X="12.164" Y="1.446" />
+        <Point X="12.164" Y="2.947" />
+        <Point X="13" Y="2.947" />
+        <Point X="13" Y="3.25" />
+      </Path>
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="0.291" Y="0.376" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <InheritanceLine Type="My_P_Queue&lt;T&gt;">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.84" Y="0.327" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAABAAIiCAAAAAAAAAAAIAAAAAQA=</HashCode>
+      <FileName>My_Priority_Queue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Queue&lt;T&gt;" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>My_Queue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_RBTree&lt;T&gt;" Collapsed="true">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAIAAEAAAgAAgBAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>My_RBTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Splay&lt;T&gt;" Collapsed="true">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAABAIAAEAIAgAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>My_Splay.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Stack&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIgAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>My_Stack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Vector&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAEAIABAAAAFAIEIAAQCAAEBAAAACCEEAAIAAAI=</HashCode>
+      <FileName>My_Vector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_List&lt;T&gt;" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIAAAAAAAABAEAAKEABAACAAEwAAIAiAAAAgIAAgA=</HashCode>
+      <FileName>My_List.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_List_Node&lt;T&gt;" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgBAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>My_List.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

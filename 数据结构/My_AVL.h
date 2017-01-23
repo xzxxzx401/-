@@ -11,7 +11,7 @@ template <typename T> class My_AVL:protected My_BST<typename T>
 {
 	public:
 	BinNodePosi(T) root() { return _root; }
-	BinNodePosi(T)& search(const T& e) { return My_BST::search(e); }
+	BinNodePosi(T)& search(const T& e) { return My_BST<T>::search(e); }
 
 	BinNodePosi(T) insert(const T& e)
 	{
@@ -34,20 +34,20 @@ template <typename T> class My_AVL:protected My_BST<typename T>
 
 	bool remove(const T& e)
 	{
-		if(!My_BST::remove(e)) return false;
+		if(!My_BST<T>::remove(e)) return false;
 
 		for(BinNodePosi(T) h=_hot;h;h=h->parent)
 		{
 			if(!AVL_Balenced(h))
 			{
-				(is_root(h) ? _root : (h->parent->lc==h ? h->parent->lc : h->parent->rc))
+				(My_BinTree<T>::is_root(h) ? _root : (h->parent->lc==h ? h->parent->lc : h->parent->rc))
 					=rotateAt(taller_child(taller_child(h)));
 			}
 			updateHight(h);
 		}
 		return true;
 	}
-	void travInorder() { return My_BST::travInorder(); }
+	void travInorder() { return My_BST<T>::travInorder(); }
 	int size() { return _size; }
 	
 	protected:

@@ -13,7 +13,7 @@ template <typename T> class My_BinNode
 	My_BinNode() :_data(0), parent(nullptr), lc(nullptr), rc(nullptr), hight(0), npl(0), color(RB_RED) {}
 	My_BinNode(T e, BinNodePosi(T) p=nullptr, BinNodePosi(T) lc=nullptr, BinNodePosi(T) rc=nullptr, int h=0, int l=1, RBColor c=RB_RED) :
 		_data(e), parent(p), lc(lc), rc(rc), hight(h), npl(l), color(c) { }
-	~My_BinNode() {};
+	~My_BinNode() {}
 
 	//封装新节点，作为当前节点左孩子插入
 	BinNodePosi(T) insertAsLC(T const &_e) { return lc=new My_BinNode(_e, this); }
@@ -28,7 +28,7 @@ template <typename T> class My_BinNode
 	void travPre(BinNodePosi(T) _p) 
 	{ 
 		if(!_p) return;
-		cout<<_p->_data<<' ';
+		std::cout<<_p->_data<<' ';
 		travPre(_p->lc);
 		travPre(_p->rc);
 	}
@@ -36,7 +36,7 @@ template <typename T> class My_BinNode
 	{
 		if(!_p) return;
 		travIn(_p->lc);
-		cout<<_p->_data<<' ';
+		std::cout<<_p->_data<<' ';
 		travIn(_p->rc);
 	}
 	void travPost(BinNodePosi(T) _p)
@@ -44,7 +44,7 @@ template <typename T> class My_BinNode
 		if(!_p) return;
 		travPost(_p->lc);
 		travPost(_p->rc);
-		cout<<_p->_data<<' ';
+		std::cout<<_p->_data<<' ';
 	}
 
 	//层序遍历 void travLevel(){}
@@ -65,6 +65,8 @@ template <typename T> class My_BinTree
 {
 
 	protected:
+	int _size;
+	BinNodePosi(T) _root;
 	//删除节点及其子树
 	void remove(BinNodePosi(T) _b)
 	{
@@ -79,9 +81,9 @@ template <typename T> class My_BinTree
 		delete _b;
 	}
 	//更新高度
-	virtual int updateHight(BinNodePosi(T) _x)
+	virtual int updateHight(BinNodePosi(T) _x)//红黑树hight指的是虚高度，需要重写
 	{
-		return _x->hight=1+max(get_hight(_x->lc), get_hight(_x->rc));
+		return _x->hight=1+std::max(get_hight(_x->lc), get_hight(_x->rc));
 	}
 	void updateHightAbove(BinNodePosi(T) _x)
 	{
@@ -91,8 +93,6 @@ template <typename T> class My_BinTree
 			_x=_x->parent;
 		}
 	}
-	int _size;
-	BinNodePosi(T) _root;
 
 	public:
 	My_BinTree() :_size(0), _root(NULL) {}

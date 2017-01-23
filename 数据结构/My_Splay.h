@@ -4,7 +4,7 @@
 #include"My_BinTree.h"
 #define IsLc(x) (x->parent!=nullptr?(x->parent->lc==x?true:false):(false))
 
-template <typename T> class Splay:protected My_BST<typename T>//伸展树，双层伸展
+template <typename T> class My_Splay:protected My_BST<typename T>//伸展树，双层伸展
 {
 	protected:
 	BinNodePosi(T) splay(BinNodePosi(T) v)//从v开始伸展,返回伸展后的树根
@@ -70,10 +70,10 @@ template <typename T> class Splay:protected My_BST<typename T>//伸展树，双层伸展
 
 	public:
 
-	void travInorder() { return My_BST::travInorder(); }
+	void travInorder() { return My_BST<T>::travInorder(); }
 	BinNodePosi(T)& search(const T& e)
 	{
-		BinNodePosi(T) x=My_BST::search(e);
+		BinNodePosi(T) x=My_BST<T>::search(e);
 		_root=splay(x ? x : _hot);//查找失败就从父亲开始伸展，否则从查找结果开始伸展
 		return _root;
 
@@ -135,7 +135,7 @@ template <typename T> class Splay:protected My_BST<typename T>//伸展树，双层伸展
 		_size--;
 		return true;
 	}
-	BinNodePosi(T) root() { return BST::root(); }
+	BinNodePosi(T) root() { return My_BST<T>::root(); }
 	int size() { return _size; }
 
 };

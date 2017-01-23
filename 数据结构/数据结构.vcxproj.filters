@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\代码">
+      <UniqueIdentifier>{3fbb8411-40dc-45fe-80bc-fe0c246b0211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\My_cpp">
+      <UniqueIdentifier>{09b75f06-00db-4861-9f4f-d522f5e3732b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="My_BST.h">
@@ -48,67 +54,76 @@
     <ClInclude Include="My_Splay.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="My_RBTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="加里森的任务.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="回文串.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="最长字串.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="二进制八进制.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="循环队列.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="稀疏矩阵相加相乘.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="树与森铃综合.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="无向图的连通块.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="有向图强连通分量 Kosaraju算法.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="第七章实验_dag最长路.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="bst avl splay性能测试.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="bf因子求avl高度.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="插入排序.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="冒泡排序.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="快速排序.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="选择排序.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="堆，堆排序.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="先序建立二叉树.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\代码</Filter>
     </ClCompile>
     <ClCompile Include="dag最长路hxy.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\代码</Filter>
     </ClCompile>
-    <ClCompile Include="拓扑排序关键路径.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="插入排序.cpp">
+      <Filter>源文件\代码</Filter>
     </ClCompile>
+    <ClCompile Include="第七章实验_dag最长路.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="堆，堆排序.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="二进制八进制.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="回文串.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="加里森的任务.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="快速排序.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="冒泡排序.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="树与森铃综合.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="无向图的连通块.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="稀疏矩阵相加相乘.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="先序建立二叉树.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="选择排序.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="循环队列.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="有向图强连通分量 Kosaraju算法.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="最长字串.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="bst avl splay rb性能测试.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="b树测试.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
