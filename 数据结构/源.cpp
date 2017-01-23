@@ -5,21 +5,14 @@
 #include<string>
 #include<vector>
 #include<ctime>
-#include"My_RBTree.h"
+#include"My_List.h"
 using namespace std;
 int main()
 {
-	My_RBTree<int> tree;
-	int i=0;
-	for(int i=0;i<1000;i++)
+	My_List<int> li;
+	for(int i=0;i<10;i++)
 	{
-		tree.insert(i);
-	}
-	for(int i=0;i<1000;i++)
-	{
-		cout<<(!tree.search(i))<<' ';
-		tree.remove(i);
-		cout<<(!tree.search(i))<<endl;
+		li.InsertAsFirst(i);
 	}
 	system("pause");
 	return 0;

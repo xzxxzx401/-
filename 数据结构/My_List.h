@@ -3,9 +3,10 @@
 
 #define ListNodePosi(T) My_List_Node<T>*
 typedef int Rank;//秩
-
+template <typename T> class My_List;
 template <typename T> class My_List_Node //双向链表节点封装
 {
+	friend class My_List<T>;
 	private:
 	ListNodePosi(T) _prev;//前驱指针
 	T _data;//数据域
@@ -13,7 +14,7 @@ template <typename T> class My_List_Node //双向链表节点封装
 
 	public:
 	My_List_Node(){}//构造
-	My_List_Node(T __data,ListNodePosi(T) __prev=NULL,ListNodePosi(T) __succ=NULL){ _data=__data;_prev=__prev;_succ=__succ; }//构造
+	My_List_Node(T __data,ListNodePosi(T) __prev=nullptr,ListNodePosi(T) __succ=nullptr){ _data=__data;_prev=__prev;_succ=__succ; }//构造
 
 	//前插函数
 	ListNodePosi(T) InsertAs_Prev(T const &_e)
@@ -34,7 +35,8 @@ template <typename T> class My_List_Node //双向链表节点封装
 		_succ=_x;
 		return _x;
 	}
-
+	ListNodePosi(T) succ(){ return this->_succ; }
+	ListNodePosi(T) prev(){ return this->_prev; }
 };
 template <typename T> class My_List//带首末节点的双向链表
 {
@@ -47,7 +49,14 @@ template <typename T> class My_List//带首末节点的双向链表
 	//构造
 	My_List(){ init(); }
 	//析构
-	~My_List(){ clear();/*delete _header;delete _trailer;*/ }
+	~My_List()
+	{ 
+		clear();
+		_header->_succ=nullptr;
+		_trailer->_prev=nullptr;
+		delete _header;
+		delete _trailer;
+	}
 	//重载[]实现下标访问
 	T& operator [](Rank r){ ListNodePosi(T) p=first();while(r--) p=p->_succ;return p->_data; }
 	//返回头节点(第一个元素)
