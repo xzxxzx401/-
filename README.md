@@ -11,3 +11,4 @@ Data Structure Exercise Codes
 - RB_Tree
 - BTree
 - Priority_Queue(Binary Heap)
+- Some Small Algorithms
