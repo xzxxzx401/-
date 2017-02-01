@@ -113,13 +113,13 @@
     <ClCompile Include="最长字串.cpp">
       <Filter>源文件\代码</Filter>
     </ClCompile>
-    <ClCompile Include="源.cpp">
-      <Filter>源文件\代码</Filter>
-    </ClCompile>
     <ClCompile Include="bst avl splay rb性能测试.cpp">
       <Filter>源文件\代码</Filter>
     </ClCompile>
     <ClCompile Include="b树测试.cpp">
+      <Filter>源文件\代码</Filter>
+    </ClCompile>
+    <ClCompile Include="自定类应用到模板里面.cpp">
       <Filter>源文件\代码</Filter>
     </ClCompile>
   </ItemGroup>
