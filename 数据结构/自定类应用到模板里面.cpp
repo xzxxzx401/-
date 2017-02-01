@@ -18,7 +18,7 @@ class integer
 	integer(const integer& A){ a=A.a; }
 	~integer(){}
 	bool operator <(const integer A)const{ return a<A.a; }
-	bool operator ==(const integer& A){ return a==A.a; }
+	bool operator ==(const integer& A)const{ return a==A.a; }
 	friend ostream &operator<<(ostream &os, const integer &c)
 	{
 		os<<c.a;
@@ -29,17 +29,15 @@ class integer
 		is>>c.a;
 		return is;
 	}
-	int& operator*() { return a; }
-	int* operator->() { return &a; }
-	int& operator&() { return a; }
 };
 int main()
 {
-	My_RBTree<integer> b;
-	for(int i=0;i<10;i++)
+	My_BST<integer> b;
+	for(int i=0;i<100;i++)
 	{
 		b.insert(integer(i));
 	}
+	b.travInorder();
 	system("pause");
 	return 0;
 }
